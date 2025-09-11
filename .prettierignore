@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+/.next/
+/out/
+/build/
+/dist/
+
+# Generated files
+*.generated.*
+*.min.js
+*.min.css
+
+# Package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+*.log
+
+# Cache
+.cache
+.parcel-cache
+.eslintcache
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary
+tmp/
+temp/
+
+# Audio/Video files
+uploads/
+outputs/
+*.wav
+*.mp3
+*.mp4
+*.m4a
+*.avi
+*.mov
+*.mkv
