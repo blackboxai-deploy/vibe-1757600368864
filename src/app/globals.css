@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent;
+}
+
+/* Audio player custom styles */
+.audio-player {
+  @apply bg-card border border-border rounded-lg;
+}
+
+/* File upload drag and drop styles */
+.drag-active {
+  @apply border-primary bg-primary/5;
+}
+
+.drag-reject {
+  @apply border-destructive bg-destructive/5;
+}
+
+/* Processing animation */
+@keyframes processing {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.processing-spinner {
+  animation: processing 2s linear infinite;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, 
+    hsl(var(--primary)) 0%, 
+    hsl(var(--primary) / 0.8) 25%, 
+    hsl(var(--accent)) 50%, 
+    hsl(var(--accent) / 0.8) 75%, 
+    hsl(var(--secondary)) 100%);
+}
+
+/* Audio waveform visualization */
+.waveform {
+  @apply flex items-end space-x-1 h-8;
+}
+
+.waveform-bar {
+  @apply bg-primary rounded-t w-1 transition-all duration-300;
+}
+
+/* Status indicators */
+.status-queued {
+  @apply bg-blue-500/20 text-blue-300 border-blue-500/30;
+}
+
+.status-processing {
+  @apply bg-yellow-500/20 text-yellow-300 border-yellow-500/30;
+}
+
+.status-completed {
+  @apply bg-green-500/20 text-green-300 border-green-500/30;
+}
+
+.status-failed {
+  @apply bg-red-500/20 text-red-300 border-red-500/30;
+}
+
+/* Button animations */
+.btn-download {
+  @apply transition-all duration-200 hover:scale-105 active:scale-95;
+}
+
+/* Progress bar animations */
+.progress-bar {
+  transition: width 0.3s ease-in-out;
+}
+
+/* File card animations */
+.file-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+}
+
+/* Toast notification custom styles */
+.toast-success {
+  @apply bg-green-500/20 border-green-500/30 text-green-300;
+}
+
+.toast-error {
+  @apply bg-red-500/20 border-red-500/30 text-red-300;
+}
+
+.toast-info {
+  @apply bg-blue-500/20 border-blue-500/30 text-blue-300;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+  
+  .file-grid {
+    @apply grid-cols-1;
+  }
+  
+  .button-group {
+    @apply flex-col space-y-2 space-x-0;
+  }
+}
